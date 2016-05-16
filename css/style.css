@@ -158,6 +158,7 @@ section#howwedoit ol#steps > li:after {
 section#whoweare {
 	padding: 0;
 	height: calc(100vh - 100px);
+	min-height: 600px;
 }
 
 section#whoweare .our-group {
