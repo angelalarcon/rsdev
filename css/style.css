@@ -75,6 +75,10 @@ header .navbar-default .navbar-nav>li.active:nth-child(4) a {
 	background-color: #ECEEF0;
 }
 
+header .navbar-toggle {
+	margin-top: 30px;
+}
+
 section {
 	width: 100%;
 	min-height: calc(100vh - 100px);
@@ -174,6 +178,7 @@ section#whoweare .our-group .person {
 	overflow: hidden;
 	padding: 20px 15px;
 	transition: width 1s;
+	min-height: 600px;
 }
 
 section#whoweare .our-group .person p {
@@ -238,9 +243,14 @@ section#whoweare .our-group .person .pic {
 	padding: 0 10px;
 }
 
+section#whoweare .our-group .person:hover .pic {
+	top: 50%;
+}
+
 section#whoweare .our-group .person .pic img {
 	width: 200%;
 	transition: all 1s;
+	max-width: none;
 }
 
 section#whoweare .our-group .person:hover .pic img {
@@ -627,4 +637,93 @@ a:focus {
 @keyframes coding {
 	from {margin-top: -2px;}
 	to {margin-top: 2px;}
+}
+
+@media screen and (min-width: 1000px) {
+	header .navbar-toggle {
+		display: none;
+	}
+	header .navbar-collapse.collapse {
+		display: block!important;
+		height: auto!important;
+		padding-bottom: 0;
+		overflow: visible!important;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	header .navbar-header {
+		float: none;
+	}
+	header .navbar-toggle {
+		display: block;
+	}
+	header .navbar-collapse {
+		padding: 0;
+	}
+	header .navbar-collapse.collapse {
+		display: none!important;
+		height: auto!important;
+		padding-bottom: 0;
+		overflow: hidden !important;
+	}
+	header .collapse {
+		display: none!important;
+	}
+	header .collapse.in {
+		display: block!important;
+	}
+	header .navbar-right {
+		float: none !important;
+		margin: 0;
+	}
+	header .navbar-nav>li {
+		float: none;
+		display: block;
+	}
+	section#whoweare {
+		background-color: #F35353;
+	}
+	section#whoweare .our-group .person .pic img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	section#whoweare .our-group:hover .person {
+		width: 0%;
+		padding: 20px 0;
+	}
+	section#whoweare .our-group .person:hover {
+		width: 100%;
+	}
+	section#whoweare .our-group .person h2 {
+		transform: rotate(-90deg);
+		transform-origin: 150px 150px;
+		width: 300px;
+		text-align: left;
+		margin: 0;
+		transition: all 1s;
+	}
+	section#whoweare .our-group .person:hover h2 {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		width: auto;
+		text-align: center;
+		transform: rotate(0deg);
+	}
+	section#whoweare .our-group .person h4,
+	section#whoweare .our-group .person hr,
+	section#whoweare .our-group .person .pic img {
+		opacity: 0;
+		transition: all 1s;
+	}
+	section#whoweare .our-group .person:hover h4,
+	section#whoweare .our-group .person:hover hr,
+	section#whoweare .our-group .person:hover .pic img {
+		opacity: 1;
+	}
+	section#whoweare .our-group .person:hover .pic {
+		top: 40%;
+	}
 }
